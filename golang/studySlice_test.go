@@ -92,13 +92,13 @@ func TestTrimElem(t *testing.T) {
 			args{
 				[]interface{}{1, 2, "abc", "def", 100},
 				func(a interface{}) bool {
-					if v, ok := a.(int); ok {
-						return v < 0
+					if _, ok := a.(int); ok {
+						return true
 					}
-					return true
+					return false
 				},
 			},
-			nil,
+			[]interface{}{"abc", "def"},
 		},
 	}
 	for _, tt := range tests {
