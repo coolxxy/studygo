@@ -36,7 +36,7 @@ func TrimByte(s []byte, fn func(byte) bool) []byte {
 	return ans
 }
 
-// 扩展到任意 slice
+// 扩展到任意 interface{} slice
 func TrimElem(s []interface{}, fn func(interface{}) bool) []interface{} {
 	if s == nil {
 		return nil
